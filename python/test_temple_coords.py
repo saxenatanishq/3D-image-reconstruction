@@ -68,23 +68,3 @@ max_valid_points = 0
 for ind in range(4):
     E = Extrinsic_options[:,:,ind]
     P2_candidate = K2 @ E  #Compute final projection matrix for second camera using this option of E
-    
-    # Triangulate some test points
-    # pts3d = sub.triangulate(P1, pts1_image, P2_candidate, pts2_image)
-    
-    # Count number of points with positive depth
-    # valid_points = np.sum(pts3d[:, 2] > 0)
-
-    # if valid_points > max_valid_points:
-    #     max_valid_points = valid_points
-    #     best_extrinsic = P2_candidate
-
-
-# # 9. Scatter plot the correct 3D points
-
-# # 10. Save the computed extrinsic parameters (R1, R2, t1, t2) to data/extrinsics.npz
-# R1 = P1[:, :3]
-# t1 = P1[:, 3]
-# R2 = P2[:, :3]
-# t2 = P2[:, 3]
-# np.savez("data/extrinsics.npz", R1=R1, R2=R2, t1=t1, t2=t2)
